@@ -8,15 +8,19 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
 
         System.out.println("Задание 1");
-        int clientOS = 1;
-        if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+        int clientOS = 0;
+        if (clientOS > 1) {
+            System.out.println("Некорректное значение");
         } else {
-            System.out.println("Установите версию приложения для iOS по ссылке");
+            if (clientOS == 1) {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
         }
 
         System.out.println("Задание 2");
-        int clientDeviceYear = 2016;
+        int clientDeviceYear = 2014;
         if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию для Android по ссылке");
         } else if (clientOS == 1 && clientDeviceYear >= 2015) {
@@ -24,14 +28,14 @@ public class Main {
         } else if (clientOS == 0 && clientDeviceYear < 2015) {
             System.out.println("Установить облегченную версию iOS по ссылке");
         } else if (clientOS == 0 && clientDeviceYear >= 2015) {
-            System.out.println("Установите современную версию iOS по ссылке");
+            System.out.println("Установите версию iOS по ссылке");
         }
         System.out.println("Задание 3");
-        int year = 2080;
-        if (year % 400 == 0 || year % 4 == 0) {
-            System.out.println("" + year + " год является високосным");
-        } else if (year % 100 == 0) {
+        int year = 1920;
+        if (year % 100 == 0) {
             System.out.println("" + year + " год не является високосным");
+        } else  if (year % 400 == 0 || year % 4 == 0) {
+                System.out.println("" + year + " год является високосным");
         } else if (year < 1584) {
             System.out.println("" + year + " год не является високосным");
         } else if (year % 400 != 0 || year % 4 != 0) {
@@ -39,20 +43,17 @@ public class Main {
         }
 
         System.out.println("Задание 4");
-        int deliveryDistance = 100;
+        int deliveryDistance = 59;
         int day = 1;
-        if (deliveryDistance > 100)
-        {
+        if (deliveryDistance > 100) {
             System.out.println("Не доставляется.");
-        } else {
-            if (deliveryDistance >= 20) {
-                day++;
-            }
-            if (deliveryDistance >= 60) {
-                day++;
-            }
-            System.out.println("Доставка занимает: " + day);
+        } else if (deliveryDistance >= 20 && deliveryDistance <60) {
+            day++;
+        } else if (deliveryDistance >= 60 && deliveryDistance <=100) {
+            day+=2;
         }
+        System.out.println("Доставка занимает: " + day);
+
         System.out.println("Задание 5");
         int monthNumber = 13;
         switch (monthNumber) {
