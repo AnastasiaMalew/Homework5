@@ -32,10 +32,12 @@ public class Main {
         }
         System.out.println("Задание 3");
         int year = 1920;
-        if (year % 100 == 0) {
+        if (year % 400 == 0)  {
+            System.out.println("" + year + " год является високосным");
+        } else if (year % 4 == 0) {
+            System.out.println("" + year + " год является високосным");
+        } else  if (year % 100 == 0) {
             System.out.println("" + year + " год не является високосным");
-        } else  if (year % 400 == 0 || year % 4 == 0) {
-                System.out.println("" + year + " год является високосным");
         } else if (year < 1584) {
             System.out.println("" + year + " год не является високосным");
         } else if (year % 400 != 0 || year % 4 != 0) {
